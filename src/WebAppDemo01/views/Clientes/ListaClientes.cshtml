@@ -1,0 +1,45 @@
+﻿@model ListaClientesViewModel
+
+
+<div class="row m-t-30">
+    <div class="col-md-12">
+        <h3 class="title-5 m-b-35">@Model.ListaClientes</h3>
+        <div class="table-responsive m-b-40">
+            <table class="table table-borderless table-data3">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Sexo</th>
+                        <th>FechaNacimiento</th>
+                        <th>TipoDocumento</th>
+                        <th>NumDocumento</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var clientes in Model.Clientes)
+            {
+                        <tr>
+                            <td>@clientes.CodigoClientes</td>
+                            <td><img src="@clientes.Imagenes" alt="ImgClientes" /></td>
+                            <td>@clientes.NombreClientes</td>
+                            <td>@clientes.Sexo</td>
+                            <td>@clientes.FechaNacimiento</td>
+                            <td>@clientes.TipoDocumento</td>
+                            <td>@clientes.NumDocumento</td>
+                            <td>@clientes.Direccion</td>
+                            <td>@clientes.Telefono</td>
+                            <td>@clientes.Email</td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE-->
+    </div>
+</div>

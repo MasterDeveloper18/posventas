@@ -1,0 +1,43 @@
+﻿@model ListaUsuariosViewModel
+
+
+<div class="row m-t-30">
+    <div class="col-md-12">
+        <h3 class="title-5 m-b-35">@Model.CategoriasUsuarios</h3>
+        <div class="table-responsive m-b-40">
+            <table class="table table-borderless table-data3">
+                <thead>
+                    <tr>
+                        <th>iMAGEN</th>
+                        <th>Usuarios</th>
+                        <th>Apellido</th>
+                        <th>NicName</th>
+                        <th>Password</th>
+                        <th>FechaCreacion</th>
+                        <th>Estado</th>
+                        <th>Lista Negra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var usuarios in Model.Usuarios)
+            {
+                        <tr>
+                            <td>
+                                <img src="@usuarios.ImagenUsuarioURL" alt="CoolAdmin" />
+                            </td>
+                            <td>@usuarios.NombreUsuario</td>
+                            <td>@usuarios.ApellidoUsuario</td>
+                            <td>@usuarios.UserName</td>
+                            <td>@usuarios.Contraseña</td>
+                            <td>@usuarios.fechacreacion</td>
+                            <td>@usuarios.UsuariosInactivos</td>
+                            <td>@usuarios.ListaNegra</td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE-->
+    </div>
+</div>

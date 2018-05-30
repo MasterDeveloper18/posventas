@@ -1,0 +1,47 @@
+﻿@model ListaProveedoresViewModel
+
+
+<div class="row m-t-30">
+    <div class="col-md-12">
+        <h3 class="title-5 m-b-35">Listado de Proveedores</h3>
+        <div class="table-responsive m-b-40">
+            <table class="table table-borderless table-data3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NombreProveedor</th>
+                        <th>Imagen</th>
+                        <th>NombreContacto</th>
+                        <th>CargoContacto</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Notas</th>
+                        <th>Estado</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var proveedores in Model.Proveedores)
+            {
+                        <tr>
+                            <td>@proveedores.CodigoProveedores</td>
+                            <td>@proveedores.NombreProveedor</td>
+                            <td><img src="@proveedores.ImagenURL" alt="LogoProveedor" /></td>
+                            <td>@proveedores.NombreContacto</td>
+                            <td>@proveedores.CargoContacto</td>
+                            <td>@proveedores.Direccion</td>
+                            <td>@proveedores.Telefono</td>
+                            <td>@proveedores.Email</td>
+                            <td>@proveedores.Notas</td>
+                            <td>@proveedores.ProveedoresInactivos</td>
+                            
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE-->
+    </div>
+</div>

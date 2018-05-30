@@ -1,0 +1,42 @@
+﻿@model ListaProductosViewModel
+
+<div class="row m-t-30">
+    <div class="col-md-12">
+        <h3 class="title-5 m-b-35">Lista Productos</h3>
+        <div class="table-responsive m-b-40">
+            <table class="table table-borderless table-data3">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Oferta</th>
+                        <th>Existente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var productos in Model.Productos)
+                    {
+                        <tr>
+                            <td>@productos.CodigoProducto</td>
+                            <td>
+                                <img src="@productos.ImagenURL" alt="CoolAdmin" />
+                            </td>
+                            <td>@productos.NombreProducto</td>
+                            <td>@productos.DescripProducto</td>
+                            <td>@productos.PreVentaProducto</td>
+                            <td>@productos.ProductoEnOferta</td>
+                            <td>@productos.ProductoEnExistencia</td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE-->
+    </div>
+</div>
+
+
